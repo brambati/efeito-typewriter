@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Efeito typewriter · demo</title>
+  <link rel="stylesheet" href="typewriter.css" />
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; gap: 48px; align-content: center;
+           background: #0b0f1a; color: #e7e9f0; font-family: system-ui, sans-serif; }
+    h1 { font-size: clamp(32px, 6vw, 64px); margin: 0; text-align: center; }
+    .destaque { color: #34d399; }
+    .mono { font-family: ui-monospace, monospace; font-size: 28px; }
+    small { color: #9ca3af; display: block; text-align: center; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <section>
+    <!-- versão JavaScript: várias frases, deleta e redigita -->
+    <!-- aria-label: leitor de tela lê a frase completa, não letra por letra -->
+    <h1 aria-label="Criamos sites rápidos, acessíveis e que vendem">
+      <span aria-hidden="true">Criamos sites <span class="destaque" id="typewriter"></span><span class="cursor"></span></span>
+    </h1>
+    <small>versão JavaScript</small>
+  </section>
+
+  <section>
+    <!-- versão CSS: uma frase fixa de 30 caracteres -->
+    <span class="typewriter mono">Crio sites rápidos de verdade.</span>
+    <small>versão CSS · steps(30)</small>
+  </section>
+
+  <script src="typewriter.js"></script>
+</body>
+</html>

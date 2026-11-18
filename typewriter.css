@@ -1,0 +1,39 @@
+/* ===== versão CSS: uma frase fixa, zero JavaScript ===== */
+/* steps(30): 30 saltos discretos, um por caractere.
+   30 = número de caracteres do texto (ajuste para o seu) */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 3px solid currentColor;
+  animation:
+    digitar 3s steps(30) forwards,
+    blink 0.7s step-end infinite;
+}
+@keyframes digitar {
+  to { width: 30ch; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ===== cursor da versão JavaScript ===== */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  margin-left: 4px;
+  vertical-align: -0.1em;
+  background: currentColor;
+  animation: blink-bg 0.7s step-end infinite;
+}
+@keyframes blink-bg {
+  50% { opacity: 0; }
+}
+
+/* quem pediu menos movimento vê o texto pronto */
+@media (prefers-reduced-motion: reduce) {
+  .typewriter { animation: none; width: auto; border-right: 0; }
+  .cursor { animation: none; }
+}
